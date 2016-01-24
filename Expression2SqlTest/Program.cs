@@ -16,7 +16,7 @@ namespace Expression2SqlTest
         {
             Console.Title = "Expression2SqlTest";
 
-            ExpressionToSql<UserInfo> userInfoSql = new ExpressionToSql<UserInfo>(new MySQLSqlParser());
+			ExpressionToSql<UserInfo> userInfoSql = new ExpressionToSql<UserInfo>(new MySQLSqlParser());
             Printf(
                     userInfoSql.Select().Where(u => u.Id != 1),
                     "查询单表，带where条件，实例类"
