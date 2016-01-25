@@ -7,8 +7,8 @@ namespace Expression2SqlTest
 {
     /// <summary>
     /// Expression2Sql Sample Code
-    /// Technology Blog：http://www.cnblogs.com/strangecity
-    /// Expression2Sql Introduce：http://www.cnblogs.com/StrangeCity/p/4795117.html
+    /// Chinese Technology Blog：http://www.cnblogs.com/strangecity
+    /// Expression2Sql Chinese Introduce：http://www.cnblogs.com/StrangeCity/p/4795117.html
     /// </summary>
     class Program
     {
@@ -16,104 +16,104 @@ namespace Expression2SqlTest
         {
             Console.Title = "Expression2SqlTest";
 
-			ExpressionToSql<UserInfo> userInfoSql = new ExpressionToSql<UserInfo>(new MySQLSqlParser());
+            ExpressionToSql<UserInfo> userInfoSql = new ExpressionToSql<UserInfo>(new MySQLSqlParser());
             Printf(
                     userInfoSql.Select().Where(u => u.Id != 1),
-                    "查询单表，带where条件，实例类"
+                    "Instance class"
             );
 
 
             Printf(
                ExpressionToSqlSQLServer.Select<UserInfo>().
-                                        Where(u => u.Name == "张三"),
-               "SQLServer静态类"
+                                        Where(u => u.Name == "Jones"),
+               "SQLServer static class"
             );
             Printf(
                ExpressionToSqlMySQL.Select<UserInfo>().
-                                        Where(u => u.Name == "张三"),
-               "MySQL静态类"
+                                        Where(u => u.Name == "Tom"),
+               "MySQL static class"
             );
             Printf(
                ExpressionToSqlSQLite.Select<UserInfo>().
-                                        Where(u => u.Name == "张三"),
-               "SQLite静态类"
+                                        Where(u => u.Name == "Venus"),
+               "SQLite static class"
             );
             Printf(
                ExpressionToSqlOracle.Select<UserInfo>().
-                                        Where(u => u.Name == "张三"),
-               "Oracle静态类"
+                                        Where(u => u.Name == "Lucy"),
+               "Oracle static class"
             );
 
 
 
             Printf(
                     ExpressionToSqlSQLServer.Select<UserInfo>(),
-                    "查询单表所有字段"
+                    "Query single table all fields"
             );
 
             Printf(
                 ExpressionToSqlSQLServer.Select<UserInfo>(u => u.Id),
-                "查询单表单个字段"
+                "Query single table single field"
             );
 
             Printf(
                 ExpressionToSqlSQLServer.Select<UserInfo>(u => new { u.Id, u.Name }),
-                "查询单表指定字段"
+                "Query single table specified field"
             );
 
             Printf(
                 ExpressionToSqlSQLServer.Select<UserInfo>(u => new { UserId = u.Id, u.Email, UserName = u.Name }),
-                "查询单表指定字段，取字段别名"
+                "Query single table specified field, take field alias"
             );
 
             Printf(
                ExpressionToSqlSQLServer.Select<UserInfo>().
-                                        Where(u => u.Name == "张三"),
-               "查询单表，带where条件，实参赋值"
+                                        Where(u => u.Name == "Alice"),
+               "Query single table with multiple conditions"
             );
 
-            string parameterValue = "李四";
+            string parameterValue = "Jack";
             Printf(
                 ExpressionToSqlSQLServer.Select<UserInfo>().
                                          Where(u => u.Name == parameterValue),
-                "查询单表，带where条件，形参赋值"
+                "Query single table with multiple conditions"
             );
 
             Printf(
                 ExpressionToSqlSQLServer.Select<UserInfo>(u => u.Id).
                                          Where(u => u.Name.Like("b")),
-                "查询单表，带where Like条件"
+                "Query single table with 'like' conditions"
             );
 
             Printf(
                 ExpressionToSqlSQLServer.Select<UserInfo>(u => u.Id).
                                          Where(u => u.Name.LikeLeft("b")),
-                "查询单表，带where LikeLeft条件"
+                "Query single table with 'like left' conditions"
             );
 
             Printf(
                 ExpressionToSqlSQLServer.Select<UserInfo>(u => u.Id).
                                          Where(u => u.Name.LikeRight("b")),
-                "查询单表，带where LikeRight条件"
+                "Query single table with 'like right' conditions"
             );
 
             Printf(
                 ExpressionToSqlSQLServer.Select<UserInfo>(u => u.Name).
                                          Where(u => u.Id.In(1, 2, 3, 4, 5)),
-                "查询单表，带where in条件，写法一"
+                "Query single table with 'in' conditions, mode 1"
             );
 
             int[] aryId = { 1, 2, 3 };
             Printf(
                 ExpressionToSqlSQLServer.Select<UserInfo>(u => u.Name).
                                          Where(u => u.Id.In(aryId)),
-                "查询单表，带where in条件，写法二"
+                "Query single table with 'in' conditions, mode 2"
             );
 
             Printf(
                 ExpressionToSqlSQLServer.Select<UserInfo>(u => u.Name).
                                          Where(u => u.Name.In(new string[] { "a", "b" })),
-                "查询单表，带where in条件，写法三"
+                "Query single table with 'in' conditions, mode 3"
             );
 
             Printf(
@@ -130,7 +130,7 @@ namespace Expression2SqlTest
                                                   && u.Name.LikeRight("c")
                                                   || u.Id == null
                                                 ),
-                "查询单表，带多个where条件"
+                "Query single table with multiple conditions"
             );
 
             Printf(
@@ -140,37 +140,37 @@ namespace Expression2SqlTest
                                               && (u.Id == 100 || u.Id != null)
                                               && (u.Id == 50 || u.Id == null)
                                               ),
-                "查询单表，带多个where条件，括号优先级"
+                "Query single table with multiple conditions, parentheses priority"
             );
 
             Printf(
                  ExpressionToSqlSQLServer.Select<UserInfo, Account>((u, a) => new { u.Id, a.Name }).
                                  Join<Account>((u, a) => u.Id == a.UserId),
-                 "多表Join关联查询"
+                 "Multi-table join query"
             );
 
             Printf(
                  ExpressionToSqlSQLServer.Select<UserInfo, Account>((u, a) => new { u.Id, a.Name }).
                                           InnerJoin<Account>((u, a) => u.Id == a.UserId),
-                 "多表InnerJoin关联查询"
+                 "Multi-table innerJoin query"
             );
 
             Printf(
                  ExpressionToSqlSQLServer.Select<UserInfo, Account>((u, a) => new { u.Id, a.Name }).
                                           LeftJoin<Account>((u, a) => u.Id == a.UserId),
-                 "多表LeftJoin关联查询"
+                 "Multi-table leftJoin query"
             );
 
             Printf(
                  ExpressionToSqlSQLServer.Select<UserInfo, Account>((u, a) => new { u.Id, a.Name }).
                                           RightJoin<Account>((u, a) => u.Id == a.UserId),
-                 "多表RightJoin关联查询"
+                 "Multi-table rightJoin query"
             );
 
             Printf(
                  ExpressionToSqlSQLServer.Select<UserInfo, Account>((u, a) => new { u.Id, a.Name }).
                                           FullJoin<Account>((u, a) => u.Id == a.UserId),
-                 "多表FullJoin关联查询"
+                 "Multi-table fullJoin query"
             );
 
             Printf(
@@ -182,76 +182,76 @@ namespace Expression2SqlTest
                                           InnerJoin<Class, City>((c, d) => c.CityId == d.Id).
                                           FullJoin<City, Country>((c, d) => c.CountryId == d.Id).
                                           Where(u => u.Id != null),
-                 "多表复杂关联查询，多表相同列名取别名"
+                 "More complex associated query table, the same column name alias"
             );
 
             Printf(
                  ExpressionToSqlSQLServer.Count<UserInfo>(u => u.Id).
                                           GroupBy(u => u.Name),
-                 "GroupBy分组查询"
+                 "GroupBy"
             );
 
             Printf(
                  ExpressionToSqlSQLServer.Select<UserInfo>().
                                           OrderBy(u => u.Id),
-                 "OrderBy排序"
+                 "OrderBy"
             );
 
             Printf(
                  ExpressionToSqlSQLServer.Max<UserInfo>(u => u.Id),
-                 "返回一列中的最大值。NULL 值不包括在计算中。"
+                 "Returns a column of the maximum value, null value is not included in the calculation"
             );
 
             Printf(
                  ExpressionToSqlSQLServer.Min<UserInfo>(u => u.Id),
-                 "返回一列中的最小值。NULL 值不包括在计算中。"
+                 "Returns a column of the minimum value, null value is not included in the calculation"
             );
 
             Printf(
                  ExpressionToSqlSQLServer.Avg<UserInfo>(u => u.Id),
-                 "返回数值列的平均值。NULL 值不包括在计算中。"
+                 "Returns the numerical average of the column, null value is not included in the calculation"
             );
 
             Printf(
                  ExpressionToSqlSQLServer.Count<UserInfo>(),
-                 "返回表中的记录数"
+                 "Returns the record number in the table."
             );
 
             Printf(
                  ExpressionToSqlSQLServer.Count<UserInfo>(u => u.Id),
-                 "返回指定列的值的数目（NULL 不计入）"
+                 "Returns the value of the specified column number（null can't be counted）"
             );
 
             Printf(
                  ExpressionToSqlSQLServer.Sum<UserInfo>(u => u.Id),
-                 "返回数值列的总数（总额）。"
+                 "Returns the total number of numeric column（total amount）"
             );
 
             Printf(
-                 ExpressionToSqlSQLServer.Insert<UserInfo>(() => new { Name = "张三", Sex = 1, Email = "123456@qq.com" }),
-                 "插入一条记录"
+                 ExpressionToSqlSQLServer.Insert<UserInfo>(() => new { Name = "Paul", Sex = 1, Email = "123456@qq.com" }),
+                 "Insert a record"
             );
 
             Printf(
                  ExpressionToSqlSQLServer.Delete<UserInfo>(),
-                 "全表删除"
+                 "A full table delete"
             );
 
             Printf(
                  ExpressionToSqlSQLServer.Delete<UserInfo>().
                                           Where(u => u.Id == null),
-                 "根据where条件删除指定表记录"
+                 "According to the condition delete specified table record"
             );
 
             Printf(
-                 ExpressionToSqlSQLServer.Update<UserInfo>(() => new { Name = "", Sex = 1, Email = "123456@qq.com" }),
-                 "全表更新"
+                 ExpressionToSqlSQLServer.Update<UserInfo>(() => new { Name = "Marilyn", Sex = 1, Email = "123456@qq.com" }),
+                 "A full table updates"
             );
 
             Printf(
-                 ExpressionToSqlSQLServer.Update<UserInfo>(() => new { Name = "", Sex = 1, Email = "123456@qq.com" }).
+                 ExpressionToSqlSQLServer.Update<UserInfo>(() => new { Name = "Susan", Sex = 1, Email = "123456@qq.com" }).
                                           Where(u => u.Id == 1),
-                 "根据where条件更新指定表记录"
+                 "According to the condition update specified table record"
             );
 
             //to be continued...
@@ -262,7 +262,9 @@ namespace Expression2SqlTest
         {
             if (!string.IsNullOrWhiteSpace(description))
             {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine(description);
+                Console.ForegroundColor = ConsoleColor.Gray;
             }
             Console.WriteLine(expression2Sql.Sql);
             foreach (KeyValuePair<string, object> item in expression2Sql.DbParams)

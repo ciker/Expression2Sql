@@ -23,8 +23,6 @@ namespace Expression2Sql
 {
 	public static class ExpressionToSqlSQLite
     {
-
-
         private static ExpressionToSql<T> CreateExpressionToSql<T>()
         {
             return new ExpressionToSql<T>(new SQLiteSqlParser());

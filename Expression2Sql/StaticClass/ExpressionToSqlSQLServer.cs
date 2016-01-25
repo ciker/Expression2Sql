@@ -23,8 +23,6 @@ namespace Expression2Sql
 {
 	public static class ExpressionToSqlSQLServer
     {
-
-
         private static ExpressionToSql<T> CreateExpressionToSql<T>()
         {
             return new ExpressionToSql<T>(new SQLServerSqlParser());

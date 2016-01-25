@@ -74,7 +74,7 @@ namespace Expression2Sql
             Expression2SqlProvider.Where(expression.Arguments[1], sqlBuilder);
             sqlBuilder += " + '%'";
         }
-        
+
         protected override SqlBuilder Where(MethodCallExpression expression, SqlBuilder sqlBuilder)
         {
             var key = expression.Method;
@@ -90,7 +90,7 @@ namespace Expression2Sql
                 return sqlBuilder;
             }
 
-            throw new NotImplementedException("无法解析方法" + expression.Method);
+            throw new NotImplementedException("Unimplemented method:" + expression.Method);
         }
     }
 }

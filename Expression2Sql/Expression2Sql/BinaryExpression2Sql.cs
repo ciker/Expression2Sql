@@ -68,7 +68,7 @@ namespace Expression2Sql
                     sqlBuilder.Insert(operatorIndex, " <=");
                     break;
                 default:
-                    throw new NotImplementedException("未实现的节点类型" + expressionNodeType);
+                    throw new NotImplementedException("Unimplemented expressionType:" + expressionNodeType);
             }
         }
 

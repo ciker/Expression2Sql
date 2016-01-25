@@ -27,7 +27,7 @@ namespace Expression2Sql
         {
             if (expression == null)
             {
-                throw new ArgumentNullException("expression", "不能为null");
+                throw new ArgumentNullException("expression", "Cannot be null");
             }
 
             if (expression is BinaryExpression)
@@ -36,11 +36,11 @@ namespace Expression2Sql
             }
             if (expression is BlockExpression)
             {
-                throw new NotImplementedException("未实现的BlockExpression2Sql");
+                throw new NotImplementedException("Unimplemented BlockExpression2Sql");
             }
             if (expression is ConditionalExpression)
             {
-                throw new NotImplementedException("未实现的ConditionalExpression2Sql");
+                throw new NotImplementedException("Unimplemented ConditionalExpression2Sql");
             }
             if (expression is ConstantExpression)
             {
@@ -48,43 +48,43 @@ namespace Expression2Sql
             }
             if (expression is DebugInfoExpression)
             {
-                throw new NotImplementedException("未实现的DebugInfoExpression2Sql");
+                throw new NotImplementedException("Unimplemented DebugInfoExpression2Sql");
             }
             if (expression is DefaultExpression)
             {
-                throw new NotImplementedException("未实现的DefaultExpression2Sql");
+                throw new NotImplementedException("Unimplemented DefaultExpression2Sql");
             }
             if (expression is DynamicExpression)
             {
-                throw new NotImplementedException("未实现的DynamicExpression2Sql");
+                throw new NotImplementedException("Unimplemented DynamicExpression2Sql");
             }
             if (expression is GotoExpression)
             {
-                throw new NotImplementedException("未实现的GotoExpression2Sql");
+                throw new NotImplementedException("Unimplemented GotoExpression2Sql");
             }
             if (expression is IndexExpression)
             {
-                throw new NotImplementedException("未实现的IndexExpression2Sql");
+                throw new NotImplementedException("Unimplemented IndexExpression2Sql");
             }
             if (expression is InvocationExpression)
             {
-                throw new NotImplementedException("未实现的InvocationExpression2Sql");
+                throw new NotImplementedException("Unimplemented InvocationExpression2Sql");
             }
             if (expression is LabelExpression)
             {
-                throw new NotImplementedException("未实现的LabelExpression2Sql");
+                throw new NotImplementedException("Unimplemented LabelExpression2Sql");
             }
             if (expression is LambdaExpression)
             {
-                throw new NotImplementedException("未实现的LambdaExpression2Sql");
+                throw new NotImplementedException("Unimplemented LambdaExpression2Sql");
             }
             if (expression is ListInitExpression)
             {
-                throw new NotImplementedException("未实现的ListInitExpression2Sql");
+                throw new NotImplementedException("Unimplemented ListInitExpression2Sql");
             }
             if (expression is LoopExpression)
             {
-                throw new NotImplementedException("未实现的LoopExpression2Sql");
+                throw new NotImplementedException("Unimplemented LoopExpression2Sql");
             }
             if (expression is MemberExpression)
             {
@@ -92,7 +92,7 @@ namespace Expression2Sql
             }
             if (expression is MemberInitExpression)
             {
-                throw new NotImplementedException("未实现的MemberInitExpression2Sql");
+                throw new NotImplementedException("Unimplemented MemberInitExpression2Sql");
             }
             if (expression is MethodCallExpression)
             {
@@ -112,25 +112,26 @@ namespace Expression2Sql
             }
             if (expression is RuntimeVariablesExpression)
             {
-                throw new NotImplementedException("未实现的RuntimeVariablesExpression2Sql");
+                throw new NotImplementedException("Unimplemented RuntimeVariablesExpression2Sql");
             }
             if (expression is SwitchExpression)
             {
-                throw new NotImplementedException("未实现的SwitchExpression2Sql");
+                throw new NotImplementedException("Unimplemented SwitchExpression2Sql");
             }
             if (expression is TryExpression)
             {
-                throw new NotImplementedException("未实现的TryExpression2Sql");
+                throw new NotImplementedException("Unimplemented TryExpression2Sql");
             }
             if (expression is TypeBinaryExpression)
             {
-                throw new NotImplementedException("未实现的TypeBinaryExpression2Sql");
+                throw new NotImplementedException("Unimplemented TypeBinaryExpression2Sql");
             }
             if (expression is UnaryExpression)
             {
                 return new UnaryExpression2Sql();
             }
-            throw new NotImplementedException("未实现的Expression2Sql");
+
+            throw new NotImplementedException("Unimplemented Expression2Sql");
         }
 
         public static void Insert(Expression expression, SqlBuilder sqlBuilder)

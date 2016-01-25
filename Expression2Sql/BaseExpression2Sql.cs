@@ -36,55 +36,55 @@ namespace Expression2Sql
 
         protected virtual SqlBuilder Insert(T expression, SqlBuilder sqlBuilder)
         {
-            throw new NotImplementedException("未实现" + typeof(T).Name + "2Sql.Insert方法");
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Insert method");
         }
         protected virtual SqlBuilder Update(T expression, SqlBuilder sqlBuilder)
         {
-            throw new NotImplementedException("未实现" + typeof(T).Name + "2Sql.Update方法");
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Update method");
         }
         protected virtual SqlBuilder Select(T expression, SqlBuilder sqlBuilder)
         {
-            throw new NotImplementedException("未实现" + typeof(T).Name + "2Sql.Select方法");
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Select method");
         }
         protected virtual SqlBuilder Join(T expression, SqlBuilder sqlBuilder)
         {
-            throw new NotImplementedException("未实现" + typeof(T).Name + "2Sql.Join方法");
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Join method");
         }
         protected virtual SqlBuilder Where(T expression, SqlBuilder sqlBuilder)
         {
-            throw new NotImplementedException("未实现" + typeof(T).Name + "2Sql.Where方法");
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Where method");
         }
         protected virtual SqlBuilder In(T expression, SqlBuilder sqlBuilder)
         {
-            throw new NotImplementedException("未实现" + typeof(T).Name + "2Sql.In方法");
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.In method");
         }
         protected virtual SqlBuilder GroupBy(T expression, SqlBuilder sqlBuilder)
         {
-            throw new NotImplementedException("未实现" + typeof(T).Name + "2Sql.GroupBy方法");
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.GroupBy method");
         }
         protected virtual SqlBuilder OrderBy(T expression, SqlBuilder sqlBuilder)
         {
-            throw new NotImplementedException("未实现" + typeof(T).Name + "2Sql.OrderBy方法");
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.OrderBy method");
         }
         protected virtual SqlBuilder Max(T expression, SqlBuilder sqlBuilder)
         {
-            throw new NotImplementedException("未实现" + typeof(T).Name + "2Sql.Max方法");
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Max method");
         }
         protected virtual SqlBuilder Min(T expression, SqlBuilder sqlBuilder)
         {
-            throw new NotImplementedException("未实现" + typeof(T).Name + "2Sql.Min方法");
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Min method");
         }
         protected virtual SqlBuilder Avg(T expression, SqlBuilder sqlBuilder)
         {
-            throw new NotImplementedException("未实现" + typeof(T).Name + "2Sql.Avg方法");
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Avg method");
         }
         protected virtual SqlBuilder Count(T expression, SqlBuilder sqlBuilder)
         {
-            throw new NotImplementedException("未实现" + typeof(T).Name + "2Sql.Count方法");
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Count method");
         }
         protected virtual SqlBuilder Sum(T expression, SqlBuilder sqlBuilder)
         {
-            throw new NotImplementedException("未实现" + typeof(T).Name + "2Sql.Sum方法");
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Sum method");
         }
 
 

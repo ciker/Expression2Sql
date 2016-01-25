@@ -165,7 +165,7 @@ namespace Expression2Sql
             return this._sqlBuilder.ToString();
         }
 
-        #region StringBuilder 方法封装
+        #region StringBuilder
         internal void Insert(int index, string value)
         {
             this._sqlBuilder.Insert(index, value);
